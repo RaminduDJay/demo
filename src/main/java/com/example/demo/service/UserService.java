@@ -2,7 +2,7 @@ package com.example.demo.service;
 
 
 import com.example.demo.entity.User;
-import com.example.demo.dto.userDTO;
+import com.example.demo.dto.UserDTO;
 import com.example.demo.repo.UserRepo;
 import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
