@@ -5,6 +5,8 @@ import com.example.demo.entity.User;
 import com.example.demo.dto.UserDTO;
 import com.example.demo.repo.UserRepo;
 import jakarta.transaction.Transactional;
+
+import org.hibernate.mapping.List;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,4 +26,11 @@ public class UserService {
         return userDTO;
 
     }
+
+
+    public List<UserDTO> getAllUsers(){
+        List<User>userList = userRepo.findAll();
+        return modelMapper.map(userList, new TypeToken<List<UserDTO>>(){}.getType());
+    }
+
 }

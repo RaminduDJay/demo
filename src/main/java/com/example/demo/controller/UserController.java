@@ -13,9 +13,9 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/getUser")
-    public String getUser() {
-        return "Simple User";
+    @GetMapping("/getUsers")
+    public List<UserDTO> getUser(){
+        return userService.getAllUsers();
     }
     @PostMapping("/saveUser")
     public UserDTO saveUser(@RequestBody UserDTO userDTO){
